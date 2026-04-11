@@ -17,7 +17,7 @@ const PERSONALITIES = [
   { label: "Sluggish (negative)", very: "", positive: "", negative: "Sluggish" },
 ];
 
-function calcSpeed({ baseSpeed, isAir, speedTp, speedUp, personality, item, ability, windOn, abilitiesOn }) {
+function calcSpeed({ baseSpeed, isAir, speedTp, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost }) {
   const personalityBonus =
     personality.very === "Nimble" ? 1.2 :
     personality.very === "Sluggish" ? 0.8 :
@@ -43,12 +43,19 @@ function calcSpeed({ baseSpeed, isAir, speedTp, speedUp, personality, item, abil
     if (canGetWind) result = Math.floor(result * 1.25);
   }
 
+  if (paralyzed) result = Math.floor(result * 0.5);
+
+  if (statBoost !== 0) {
+    const m = (2 + Math.abs(statBoost)) * 0.5;
+    result = Math.floor(statBoost < 0 ? result / m : result * m);
+  }
+
   return result;
 }
 
-function minTpsToBeat(targetSpeed, { baseSpeed, isAir, speedUp, personality, item, ability, windOn, abilitiesOn }) {
+function minTpsToBeat(targetSpeed, { baseSpeed, isAir, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost }) {
     for (let tp = 0; tp <= 200; tp += 8) {
-        const speed = calcSpeed({ baseSpeed, isAir, speedTp: tp, speedUp, personality, item, ability, windOn, abilitiesOn });
+        const speed = calcSpeed({ baseSpeed, isAir, speedTp: tp, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost });
         if (speed >= targetSpeed) return tp;
     }
     return null; // can't beat it even at 200 TPs
@@ -127,7 +134,8 @@ function SpeedRow({ entry, highlight, mySpeed }) {
 }
 
 function SpeedDisplay({ entry, highlight, mySpeed, myStats, MyTps }) {
-  const diff = minTpsToBeat(entry.displaySpeed, myStats) - MyTps;
+  const minTps = minTpsToBeat(entry.displaySpeed, myStats);
+  const diff = minTps - MyTps === 0 ? -8 : minTps - MyTps;
   const diffStr = diff === null ? "can't beat" : diff > 0 ? `+${diff}` : diff < 0 ? `${diff}` : "";
   const isBase = entry.isBase;
   const name = entry.loomian;
@@ -193,6 +201,9 @@ export default function SpeedCalculator() {
   const [windOn, setWindOn] = useState(false);
   const [abilitiesOn, setAbilitiesOn] = useState(false);
   const [includeBase, setIncludeBase] = useState(false);
+  const [includeNFE, setIncludeNFE] = useState(false);
+  const [paralyzed, setParalyzed] = useState(false);
+  const [statBoost, setStatBoost] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -237,10 +248,14 @@ export default function SpeedCalculator() {
     : false;
 
   const mySpeed = selectedLoomian
-    ? calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp, speedUp, personality, item, ability, windOn, abilitiesOn })
+    ? calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost })
     : null;
-  const mySpeedSlowest = calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp: 0, speedUp, personality, item, ability, windOn, abilitiesOn });
-  const mySpeedFastest = calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp: 200, speedUp, personality, item, ability, windOn, abilitiesOn });
+  const mySpeedSlowest = selectedLoomian
+    ? calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp: 0, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost })
+    : null;
+  const mySpeedFastest = selectedLoomian
+    ? calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp: 200, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost })
+    : null;
 
   const pool = useMemo(() => {
     const entries = allSets.map(s => ({
@@ -251,13 +266,15 @@ export default function SpeedCalculator() {
 
     if (includeBase) {
       Object.entries(allLoomians).forEach(([key, loom]) => {
+        if (!includeNFE && loom.finalEvo !== true) return;
         const baseSpd = calcSpeed({
           baseSpeed: loom.speed,
           isAir: loom.types.map(t => t.toLowerCase()).includes("air"),
           speedTp: 0, speedUp: 40,
           personality: PERSONALITIES[0],
           item: "None", ability: "None",
-          windOn, abilitiesOn,
+          windOn, abilitiesOn, paralyzed: false,
+          statBoost: 0,
         });
 
         entries.push({
@@ -271,7 +288,7 @@ export default function SpeedCalculator() {
     }
 
     return entries.sort((a, b) => a.displaySpeed - b.displaySpeed);
-  }, [allSets, allLoomians, windOn, abilitiesOn, includeBase]);
+  }, [allSets, allLoomians, windOn, abilitiesOn, includeBase, includeNFE]);
 
   const { slower, faster, same, myEntry } = useMemo(() => {
     if (mySpeed === null) return { slower: [], faster: [], same: [], myEntry: null };
@@ -288,7 +305,7 @@ export default function SpeedCalculator() {
     const faster = pool.filter(e => e.displaySpeed > mySpeed && e.displaySpeed <= mySpeedFastest);
 
     return { slower, faster, same, myEntry: me };
-  }, [pool, mySpeed, selectedLoomian, allLoomians]);
+  }, [pool, mySpeed, mySpeedSlowest, mySpeedFastest, selectedLoomian, allLoomians, paralyzed, statBoost]);
 
   const Toggle = ({ label, value, onChange }) => (
     <button
@@ -341,7 +358,7 @@ export default function SpeedCalculator() {
           <div style={{ color: "#64748b", textAlign: "center", padding: 40 }}>Loading sets...</div>
         )}
 
-        {!loading && mySpeed !== null && (
+        {!loading && (
           <div style={{
             background: "rgba(255,255,255,0.03)",
             border: "1px solid rgba(255,255,255,0.08)",
@@ -383,7 +400,7 @@ export default function SpeedCalculator() {
                       entry={e} 
                       highlight={false} 
                       mySpeed={mySpeed}
-                      myStats={{ baseSpeed: myBaseSpeed, isAir: myIsAir, speedUp, personality, item, ability, windOn, abilitiesOn }}
+                      myStats={{ baseSpeed: myBaseSpeed, isAir: myIsAir, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost }}
                       MyTps = {speedTp}
                   />
                 ))}
@@ -411,14 +428,14 @@ export default function SpeedCalculator() {
                       entry={e} 
                       highlight={false} 
                       mySpeed={mySpeed}
-                      myStats={{ baseSpeed: myBaseSpeed, isAir: myIsAir, speedUp, personality, item, ability, windOn, abilitiesOn }}
+                      myStats={{ baseSpeed: myBaseSpeed, isAir: myIsAir, speedUp, personality, item, ability, windOn, abilitiesOn, paralyzed, statBoost }}
                       MyTps = {speedTp}
                   />
                 ))}
               </div>
             </div>
 
-
+            {/* Selected/Same Speed Loomians */}
             <div style={{
               //background: "rgba(255, 3, 3, 0.89)",
               display: "flex",
@@ -431,70 +448,108 @@ export default function SpeedCalculator() {
               textTransform: "uppercase", 
               marginBottom: 16,
             }}>
-
-              {/* User's Loomian */}
-              <div style={{
-                //background: "rgba(3, 255, 74, 0.89)",
-                display: "flex",
-                alignItems: "center",
-                flexWrap: "nowrap",
-                alignContent: "flex-start",
-                fontSize: 11, 
-                letterSpacing: 2, 
-                marginBottom: 16,
-                width: "23%",
-                height: "163px",
-              }}>
-                {/* Same (middle) */}
+              
+              <div style={{ display: "flex", flexDirection: "column", width: "23%" }}>
+                {/* Selected/Same Speed Loomians */}
                 <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(1, minmax(44px, 1fr))",
-                  background: "rgba(50, 37, 0, 0.57)",
-                  padding: 8,
-                  gap: 8,
-                  fontSize: "1em", 
-                  letterSpacing: 0, 
-                  color: "#ffffff",
-                  textTransform: "uppercase",
-                  width: "25%",
-                  height: "100%",
-                  overflowY: "auto",
+                  //background: "rgba(3, 255, 74, 0.89)",
+                  display: "flex",
+                  alignItems: "center",
+                  flexWrap: "nowrap",
+                  alignContent: "flex-start",
+                  fontSize: 11, 
+                  letterSpacing: 2, 
+                  marginBottom: 16,
+                  width: "100%",
+                  height: "163px",
                 }}>
-                  {same.map((e, i) => (
-                    <div key={`same-${i}`}
-                      style={{
-                        background: "rgba(255,255,255,0.03)",
-                        border: "1px solid rgba(255,255,255,0.08)",
-                        fontSize: "1em",
-                        height: "100%",
-                        maxHeight: 44,
-                        width: "100%",
-                      }}
-                    >
-                      <img
-                        style={{ width: "100%", height: "100%" }}
-                        src={`/sprites/${e.loomian.toLowerCase()}.png`} 
-                      />
-                    </div>
-                  ))}
+
+                  {/* Sets with the same speed as the selected Loomian */}
+                  <div style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(1, minmax(44px, 1fr))",
+                    background: "rgba(50, 37, 0, 0.57)",
+                    padding: 8,
+                    gap: 8,
+                    fontSize: "1em", 
+                    letterSpacing: 0, 
+                    color: "#ffffff",
+                    textTransform: "uppercase",
+                    width: "25%",
+                    height: "100%",
+                    overflowY: "auto",
+                  }}>
+                    {same.map((e, i) => (
+                      <div key={`same-${i}`}
+                        style={{
+                          background: "rgba(255,255,255,0.03)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          fontSize: "1em",
+                          height: "100%",
+                          maxHeight: 44,
+                          width: "100%",
+                        }}
+                      >
+                        <img
+                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                          src={`/sprites/${e.loomian.toLowerCase()}.png`} 
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* You */}
+                  <div
+                    style={{
+                      //background: "rgba(54, 6, 228, 0.9)",
+                      //border: "1px solid rgba(255,255,255,0.08)",
+                      aspectRatio: "1 / 1",
+                      height: "100%",
+                    }}
+                  >
+                    {mySpeed}
+                    <img
+                      style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                      src={`/sprites/${allLoomians[selectedLoomian]?.name.toLowerCase()}.png`} 
+                    />
+                  </div>
+
                 </div>
                 
-                {/* You */}
-                <div
-                  style={{
-                    //background: "rgba(54, 6, 228, 0.9)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    aspectRatio: "1 / 1",
-                    height: "100%",
-                  }}
-                >
-                  <img
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                    src={`/sprites/${allLoomians[selectedLoomian]?.name.toLowerCase()}.png`} 
+                {/* Loomian picker */}
+                <div style={{ position: "relative"}}>
+                  <input
+                    value={loomianInput}
+                    onChange={e => handleLoomianInput(e.target.value)}
+                    placeholder="Select a Loomian..."
+                    style={{
+                      width: "100%", padding: "10px 14px", borderRadius: 8,
+                      background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)",
+                      color: "#e2e8f0", fontSize: 14,
+                    }}
                   />
+                  {suggestions.length > 0 && (
+                    <div style={{
+                      position: "absolute", top: "100%", left: 0, right: 0, zIndex: 10,
+                      background: "#111827", border: "1px solid rgba(255,255,255,0.1)",
+                      borderRadius: 8, marginTop: 4, overflow: "hidden",
+                    }}>
+                      {suggestions.map(s => (
+                        <div
+                          key={s}
+                          className="suggestion-item"
+                          onClick={() => selectLoomian(s)}
+                          style={{ padding: "10px 14px", cursor: "pointer", fontSize: 14, color: "#e2e8f0" }}
+                        >
+                          {allLoomians[s]?.name ?? s}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
               </div>
+              
             </div>
 
             {faster.length === 0 && slower.length === 0 && (
@@ -525,39 +580,6 @@ export default function SpeedCalculator() {
         }}>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
-            {/* Loomian picker */}
-            <div style={{ position: "relative", gridColumn: "1 / -1" }}>
-              <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>Loomian</label>
-              <input
-                value={loomianInput}
-                onChange={e => handleLoomianInput(e.target.value)}
-                placeholder="Search..."
-                style={{
-                  width: "100%", padding: "10px 14px", borderRadius: 8,
-                  background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)",
-                  color: "#e2e8f0", fontSize: 14,
-                }}
-              />
-              {suggestions.length > 0 && (
-                <div style={{
-                  position: "absolute", top: "100%", left: 0, right: 0, zIndex: 10,
-                  background: "#111827", border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: 8, marginTop: 4, overflow: "hidden",
-                }}>
-                  {suggestions.map(s => (
-                    <div
-                      key={s}
-                      className="suggestion-item"
-                      onClick={() => selectLoomian(s)}
-                      style={{ padding: "10px 14px", cursor: "pointer", fontSize: 14, color: "#e2e8f0" }}
-                    >
-                      {allLoomians[s]?.name ?? s}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {/* Speed TPs */}
             <div>
               <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
@@ -575,6 +597,16 @@ export default function SpeedCalculator() {
               <input type="range" min={0} max={40} value={speedUp}
                 onChange={e => setSpeedUp(+e.target.value)} style={{ width: "100%" }} />
             </div>
+
+            {/* Stat Boost */}
+            <div>
+              <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
+                Stat Boost: <span style={{ color: "#a5b4fc" }}>{statBoost}</span>
+              </label>
+              <input type="range" min={-6} max={6} value={statBoost}
+                onChange={e => setStatBoost(+e.target.value)} style={{ width: "100%" }} />
+            </div>
+
 
             {/* Personality */}
             <div>
@@ -627,9 +659,11 @@ export default function SpeedCalculator() {
 
           {/* Toggles */}
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", paddingTop: 16, borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-            <Toggle label="🌬 Wind" value={windOn} onChange={setWindOn} />
-            <Toggle label="⚡ Abilities" value={abilitiesOn} onChange={setAbilitiesOn} />
-            <Toggle label="📊 Include base speeds" value={includeBase} onChange={setIncludeBase} />
+            <Toggle label="Wind" value={windOn} onChange={setWindOn} />
+            <Toggle label="Abilities" value={abilitiesOn} onChange={setAbilitiesOn} />
+            <Toggle label="Include base speeds" value={includeBase} onChange={setIncludeBase} />
+            <Toggle label="Include NFE" value={includeNFE} onChange={setIncludeNFE} />
+            <Toggle label="Paralyzed" value={paralyzed} onChange={setParalyzed} />
           </div>
         </div>
 
