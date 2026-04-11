@@ -46,6 +46,14 @@ function calcSpeed({ baseSpeed, isAir, speedTp, speedUp, personality, item, abil
   return result;
 }
 
+function minTpsToBeat(targetSpeed, { baseSpeed, isAir, speedUp, personality, item, ability, windOn, abilitiesOn }) {
+    for (let tp = 0; tp <= 200; tp += 8) {
+        const speed = calcSpeed({ baseSpeed, isAir, speedTp: tp, speedUp, personality, item, ability, windOn, abilitiesOn });
+        if (speed >= targetSpeed) return tp;
+    }
+    return null; // can't beat it even at 200 TPs
+}
+
 function getSpeedFromEntry(entry, windOn, abilitiesOn) {
   if (windOn && abilitiesOn) return entry.final_speed.ability_wind;
   if (windOn) return entry.final_speed.wind;
@@ -118,9 +126,9 @@ function SpeedRow({ entry, highlight, mySpeed }) {
   );
 }
 
-function SpeedDisplay({ entry, highlight, mySpeed }) {
-  const diff = entry.displaySpeed - mySpeed;
-  const diffStr = diff > 0 ? `+${diff}` : `${diff}`;
+function SpeedDisplay({ entry, highlight, mySpeed, myStats, MyTps }) {
+  const diff = minTpsToBeat(entry.displaySpeed, myStats) - MyTps;
+  const diffStr = diff === null ? "can't beat" : diff > 0 ? `+${diff}` : diff < 0 ? `${diff}` : "";
   const isBase = entry.isBase;
   const name = entry.loomian;
   const speed = entry.displaySpeed;
@@ -129,19 +137,28 @@ function SpeedDisplay({ entry, highlight, mySpeed }) {
     <div
       style={{
         background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        borderRadius: 12,
-        padding: 24,
-        marginBottom: 24,
-        flexShrink: 0,
+        border: highlight ? "3px solid rgba(255,255,255)" : "1px solid rgba(255,255,255,0.08)",
+        fontSize: "1em",
+        height: "100%",
+        width: "100%",
       }}
     >
-      <div style={{color: diff > 0 ? "#f87171" : diff < 0 ? "#4ade80" : "#fbbf24", margin: "4px", fontFamily: "monospace"}}>
-        {speed}
-        {highlight ? "—" : diffStr}
+      <div style={{ color: "#e2e8f0", margin: "auto", fontFamily: "monospace" }}>
+        <span>{speed}</span>
+        <span style={{color: 
+                highlight ? "#e2e8f0" : 
+                speed === mySpeed ? "#fbbf24" : 
+                diff > 0 ? "#f87171" : 
+                diff < 0 ? "#4ade80" : 
+                "#e2e8f0"}}>
+          {highlight ? "" : diffStr}
+        </span>
       </div>
       <div>
-        {name}
+        <img
+          style={{ width: "100%", height: "100%" }}
+          src={`/sprites/${name.toLowerCase()}.png`} 
+        />
       </div>
     </div>
   );
@@ -176,8 +193,6 @@ export default function SpeedCalculator() {
   const [windOn, setWindOn] = useState(false);
   const [abilitiesOn, setAbilitiesOn] = useState(false);
   const [includeBase, setIncludeBase] = useState(false);
-
-  const NEIGHBORS = 3;
 
   useEffect(() => {
     async function fetchData() {
@@ -224,6 +239,8 @@ export default function SpeedCalculator() {
   const mySpeed = selectedLoomian
     ? calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp, speedUp, personality, item, ability, windOn, abilitiesOn })
     : null;
+  const mySpeedSlowest = calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp: 0, speedUp, personality, item, ability, windOn, abilitiesOn });
+  const mySpeedFastest = calcSpeed({ baseSpeed: myBaseSpeed, isAir: myIsAir, speedTp: 200, speedUp, personality, item, ability, windOn, abilitiesOn });
 
   const pool = useMemo(() => {
     const entries = allSets.map(s => ({
@@ -242,6 +259,7 @@ export default function SpeedCalculator() {
           item: "None", ability: "None",
           windOn, abilitiesOn,
         });
+
         entries.push({
           loomian: loom.name,
           displaySpeed: baseSpd,
@@ -255,8 +273,8 @@ export default function SpeedCalculator() {
     return entries.sort((a, b) => a.displaySpeed - b.displaySpeed);
   }, [allSets, allLoomians, windOn, abilitiesOn, includeBase]);
 
-  const { slower, faster, myEntry } = useMemo(() => {
-    if (mySpeed === null) return { slower: [], faster: [], myEntry: null };
+  const { slower, faster, same, myEntry } = useMemo(() => {
+    if (mySpeed === null) return { slower: [], faster: [], same: [], myEntry: null };
 
     const me = {
       loomian: selectedLoomian ? (allLoomians[selectedLoomian]?.name ?? selectedLoomian) : "You",
@@ -265,10 +283,11 @@ export default function SpeedCalculator() {
       isMe: true,
     };
 
-    const slower = pool.filter(e => e.displaySpeed < mySpeed).slice(-NEIGHBORS).reverse();
-    const faster = pool.filter(e => e.displaySpeed > mySpeed).slice(0, NEIGHBORS);
+    const slower = pool.filter(e => e.displaySpeed < mySpeed && e.displaySpeed >= mySpeedSlowest);
+    const same = pool.filter(e => e.displaySpeed === mySpeed && e.loomian !== me.loomian);
+    const faster = pool.filter(e => e.displaySpeed > mySpeed && e.displaySpeed <= mySpeedFastest);
 
-    return { slower, faster, myEntry: me };
+    return { slower, faster, same, myEntry: me };
   }, [pool, mySpeed, selectedLoomian, allLoomians]);
 
   const Toggle = ({ label, value, onChange }) => (
@@ -307,7 +326,7 @@ export default function SpeedCalculator() {
         .suggestion-item:hover { background: rgba(99,102,241,0.15) !important; }
       `}</style>
 
-      <div style={{ maxWidth: 720, margin: "0 auto" }}>
+      <div style={{ width: "100%", margin: "0 auto" }}>
         {/* Header */}
         <Header />
 
@@ -327,82 +346,155 @@ export default function SpeedCalculator() {
             background: "rgba(255,255,255,0.03)",
             border: "1px solid rgba(255,255,255,0.08)",
             borderRadius: 12,
-            padding: 24,
+            padding: 4,
           }}>
-
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 80px 80px 70px",
-              fontSize: 11, letterSpacing: 2, color: "#475569",
-              textTransform: "uppercase", padding: "0 16px", marginBottom: 10,
-            }}>
-              <div>Loomian</div>
-              <div style={{ textAlign: "right" }}>Speed</div>
-              <div style={{ textAlign: "right" }}>Diff</div>
-              <div style={{ textAlign: "right" }}>Author</div>
-            </div>
-
-            {faster.length === 0 && slower.length === 0 && (
-              <div style={{ color: "#64748b", fontSize: 14, textAlign: "center", padding: "24px 0" }}>
-                No sets to compare yet. Submit some sets first!
-              </div>
-            )}
-
-            {/* Faster (above) */}
-            {[...faster].reverse().map((e, i) => (
-              <SpeedRow key={`faster-${i}`} entry={e} highlight={false} mySpeed={mySpeed} />
-            ))}
-
-            {/* You */}
-            <SpeedRow
-              entry={{ loomian: allLoomians[selectedLoomian]?.name ?? selectedLoomian, displaySpeed: mySpeed, isBase: false, isMe: true }}
-              highlight={true}
-              mySpeed={mySpeed}
-            />
-
-            {/* Slower (below) */}
-            {slower.map((e, i) => (
-              <SpeedRow key={`slower-${i}`} entry={e} highlight={false} mySpeed={mySpeed} />
-            ))}
-
-            <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid rgba(255,255,255,0.06)", fontSize: 12, color: "#475569" }}>
-              Showing up to {NEIGHBORS} faster and {NEIGHBORS} slower •{" "}
-              Green diff = you're faster · Red diff = they're faster
-            </div>
-          </div>
-        )}
-
-        {!loading && mySpeed !== null && (
-          <div style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 12,
-            padding: 24,
-          }}>
-
+            
+            {/* Slower & Faster */}
             <div style={{
               display: "flex",
               alignItems: "center",
-              gap: 8,
-              overflowX: "auto",
+              flexWrap: "nowrap",
+              justifyContent: "space-evenly",
+              fontSize: 11, 
+              letterSpacing: 2, 
+              color: "#ffffff",
+              textTransform: "uppercase", 
               marginBottom: 16,
             }}>
-              {/* Faster (above) */}
-              {[...faster].reverse().map((e, i) => (
-                <SpeedDisplay key={`faster-${i}`} entry={e} highlight={false} mySpeed={mySpeed} />
-              ))}
+              {/* Slower (left) */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(44px, 1fr))",
+                background: "rgba(0, 50, 4, 0.57)",
+                padding: 8,
+                borderRadius: 12,
+                gap: 8,
+                fontSize: "1em", 
+                letterSpacing: 0, 
+                color: "#ffffff",
+                textTransform: "uppercase",
+                width: "49%",
+                height: "250px",
+                overflowY: "auto",
+              }}>
+                {[...slower].reverse().map((e, i) => (
+                  <SpeedDisplay 
+                      key={`slower-${i}`} 
+                      entry={e} 
+                      highlight={false} 
+                      mySpeed={mySpeed}
+                      myStats={{ baseSpeed: myBaseSpeed, isAir: myIsAir, speedUp, personality, item, ability, windOn, abilitiesOn }}
+                      MyTps = {speedTp}
+                  />
+                ))}
+              </div>
 
-              {/* You */}
-              <SpeedDisplay
-                entry={{ loomian: allLoomians[selectedLoomian]?.name ?? selectedLoomian, displaySpeed: mySpeed, isBase: false, isMe: true }}
-                highlight={true}
-                mySpeed={mySpeed}
-              />
+              {/* Faster (right) */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(44px, 1fr))",
+                background: "rgba(50, 0, 0, 0.57)",
+                padding: 8,
+                borderRadius: 12,
+                gap: 8,
+                fontSize: "1em", 
+                letterSpacing: 0, 
+                color: "#ffffff",
+                textTransform: "uppercase",
+                width: "49%",
+                height: "250px",
+                overflowY: "auto",
+              }}>
+                {faster.map((e, i) => (
+                  <SpeedDisplay 
+                      key={`faster-${i}`} 
+                      entry={e} 
+                      highlight={false} 
+                      mySpeed={mySpeed}
+                      myStats={{ baseSpeed: myBaseSpeed, isAir: myIsAir, speedUp, personality, item, ability, windOn, abilitiesOn }}
+                      MyTps = {speedTp}
+                  />
+                ))}
+              </div>
+            </div>
 
-              {/* Slower (below) */}
-              {slower.map((e, i) => (
-                <SpeedDisplay key={`slower-${i}`} entry={e} highlight={false} mySpeed={mySpeed} />
-              ))}
+
+            <div style={{
+              //background: "rgba(255, 3, 3, 0.89)",
+              display: "flex",
+              gap: 8,
+              flexWrap: "nowrap",
+              alignContent: "space-evenly",
+              fontSize: 11, 
+              letterSpacing: 2, 
+              color: "#ffffff",
+              textTransform: "uppercase", 
+              marginBottom: 16,
+            }}>
+
+              {/* User's Loomian */}
+              <div style={{
+                //background: "rgba(3, 255, 74, 0.89)",
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "nowrap",
+                alignContent: "flex-start",
+                fontSize: 11, 
+                letterSpacing: 2, 
+                marginBottom: 16,
+                width: "23%",
+                height: "163px",
+              }}>
+                {/* Same (middle) */}
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(1, minmax(44px, 1fr))",
+                  background: "rgba(50, 37, 0, 0.57)",
+                  padding: 8,
+                  gap: 8,
+                  fontSize: "1em", 
+                  letterSpacing: 0, 
+                  color: "#ffffff",
+                  textTransform: "uppercase",
+                  width: "25%",
+                  height: "100%",
+                  overflowY: "auto",
+                }}>
+                  {same.map((e, i) => (
+                    <div key={`same-${i}`}
+                      style={{
+                        background: "rgba(255,255,255,0.03)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                        fontSize: "1em",
+                        height: "100%",
+                        maxHeight: 44,
+                        width: "100%",
+                      }}
+                    >
+                      <img
+                        style={{ width: "100%", height: "100%" }}
+                        src={`/sprites/${e.loomian.toLowerCase()}.png`} 
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                {/* You */}
+                <div
+                  style={{
+                    //background: "rgba(54, 6, 228, 0.9)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    aspectRatio: "1 / 1",
+                    height: "100%",
+                  }}
+                >
+                  <img
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    src={`/sprites/${allLoomians[selectedLoomian]?.name.toLowerCase()}.png`} 
+                  />
+                </div>
+
+              </div>
             </div>
 
             {faster.length === 0 && slower.length === 0 && (
@@ -411,10 +503,6 @@ export default function SpeedCalculator() {
               </div>
             )}
 
-            <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid rgba(255,255,255,0.06)", fontSize: 12, color: "#475569" }}>
-              Showing up to {NEIGHBORS} faster and {NEIGHBORS} slower •{" "}
-              Green diff = you're faster · Red diff = they're faster
-            </div>
           </div>
         )}
 
@@ -435,9 +523,6 @@ export default function SpeedCalculator() {
           padding: 24,
           marginBottom: 24,
         }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, color: "#64748b", textTransform: "uppercase", marginBottom: 20 }}>
-            Your Loomian
-          </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
             {/* Loomian picker */}
@@ -478,7 +563,7 @@ export default function SpeedCalculator() {
               <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
                 Speed TPs: <span style={{ color: "#a5b4fc" }}>{speedTp}</span>
               </label>
-              <input type="range" min={0} max={200} value={speedTp}
+              <input type="range" min={0} max={200} value={speedTp} step={8}
                 onChange={e => setSpeedTp(+e.target.value)} style={{ width: "100%" }} />
             </div>
 
@@ -487,7 +572,7 @@ export default function SpeedCalculator() {
               <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
                 Speed UPs: <span style={{ color: "#a5b4fc" }}>{speedUp}</span>
               </label>
-              <input type="range" min={0} max={200} value={speedUp}
+              <input type="range" min={0} max={40} value={speedUp}
                 onChange={e => setSpeedUp(+e.target.value)} style={{ width: "100%" }} />
             </div>
 
