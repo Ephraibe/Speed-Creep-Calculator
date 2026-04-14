@@ -1,0 +1,2784 @@
+{
+    "embit": {
+        "name": "Embit",
+        "types": [
+            "Fire"
+        ],
+        "speed": 40,
+        "finalEvo": false
+    },
+    "rabburn": {
+        "name": "Rabburn",
+        "types": [
+            "Fire"
+        ],
+        "speed": 60,
+        "finalEvo": false
+    },
+    "searknight": {
+        "name": "Searknight",
+        "types": [
+            "Fire",
+            "Metal"
+        ],
+        "speed": 65,
+        "finalEvo": true
+    },
+    "dripple": {
+        "name": "Dripple",
+        "types": [
+            "Water"
+        ],
+        "speed": 41,
+        "finalEvo": false
+    },
+    "reptide": {
+        "name": "Reptide",
+        "types": [
+            "Water"
+        ],
+        "speed": 51,
+        "finalEvo": false
+    },
+    "luminami": {
+        "name": "Luminami",
+        "types": [
+            "Water",
+            "Light"
+        ],
+        "speed": 60,
+        "finalEvo": true
+    },
+    "fevine": {
+        "name": "Fevine",
+        "types": [
+            "Plant"
+        ],
+        "speed": 64,
+        "finalEvo": false
+    },
+    "felver": {
+        "name": "Felver",
+        "types": [
+            "Plant"
+        ],
+        "speed": 84,
+        "finalEvo": false
+    },
+    "tahtab": {
+        "name": "Tahtab",
+        "types": [
+            "Plant",
+            "Brawler"
+        ],
+        "speed": 104,
+        "finalEvo": true
+    },
+    "eaglit": {
+        "name": "Eaglit",
+        "types": [
+            "Light"
+        ],
+        "speed": 60,
+        "finalEvo": false
+    },
+    "torprey": {
+        "name": "Torprey",
+        "types": [
+            "Light"
+        ],
+        "speed": 90,
+        "finalEvo": false
+    },
+    "falkyrie": {
+        "name": "Falkyrie",
+        "types": [
+            "Light",
+            "Metal"
+        ],
+        "speed": 75,
+        "finalEvo": true
+    },
+    "vambat": {
+        "name": "Vambat",
+        "types": [
+            "Dark"
+        ],
+        "speed": 69,
+        "finalEvo": false
+    },
+    "dimpire": {
+        "name": "Dimpire",
+        "types": [
+            "Dark"
+        ],
+        "speed": 85,
+        "finalEvo": false
+    },
+    "vesperatu": {
+        "name": "Vesperatu",
+        "types": [
+            "Dark",
+            "Spirit"
+        ],
+        "speed": 99,
+        "finalEvo": true
+    },
+    "snocub": {
+        "name": "Snocub",
+        "types": [
+            "Ice"
+        ],
+        "speed": 45,
+        "finalEvo": false
+    },
+    "snowki": {
+        "name": "Snowki",
+        "types": [
+            "Ice"
+        ],
+        "speed": 60,
+        "finalEvo": false
+    },
+    "himbrr": {
+        "name": "Himbrr",
+        "types": [
+            "Ice",
+            "Earth"
+        ],
+        "speed": 45,
+        "finalEvo": true
+    },
+    "weevolt": {
+        "name": "Weevolt",
+        "types": [
+            "Electric"
+        ],
+        "speed": 65,
+        "finalEvo": false
+    },
+    "stozap": {
+        "name": "Stozap",
+        "types": [
+            "Electric"
+        ],
+        "speed": 89,
+        "finalEvo": false
+    },
+    "zuelong": {
+        "name": "Zuelong",
+        "types": [
+            "Electric",
+            "Ancient"
+        ],
+        "speed": 119,
+        "finalEvo": true
+    },
+    "twilat": {
+        "name": "Twilat",
+        "types": [
+            "Simple"
+        ],
+        "speed": 40,
+        "finalEvo": false
+    },
+    "umbrat": {
+        "name": "Umbrat",
+        "types": [
+            "Dark"
+        ],
+        "speed": 71,
+        "finalEvo": true
+    },
+    "luxoar": {
+        "name": "Luxoar",
+        "types": [
+            "Light"
+        ],
+        "speed": 101,
+        "finalEvo": true
+    },
+    "tiklipse": {
+        "name": "Tiklipse",
+        "types": [
+            "Light",
+            "Dark"
+        ],
+        "speed": 89,
+        "finalEvo": true
+    },
+    "cathorn": {
+        "name": "Cathorn",
+        "types": [
+            "Bug"
+        ],
+        "speed": 47,
+        "finalEvo": false
+    },
+    "propae": {
+        "name": "Propae",
+        "types": [
+            "Bug"
+        ],
+        "speed": 37,
+        "finalEvo": false
+    },
+    "cynamoth": {
+        "name": "Cynamoth",
+        "types": [
+            "Bug",
+            "Air"
+        ],
+        "speed": 88,
+        "finalEvo": true
+    },
+    "sumobito": {
+        "name": "Sumobito",
+        "types": [
+            "Bug",
+            "Brawler"
+        ],
+        "speed": 55,
+        "finalEvo": true
+    },
+    "twittle": {
+        "name": "Twittle",
+        "types": [
+            "Air"
+        ],
+        "speed": 58,
+        "finalEvo": false
+    },
+    "paratweet": {
+        "name": "Paratweet",
+        "types": [
+            "Air"
+        ],
+        "speed": 88,
+        "finalEvo": false
+    },
+    "avitross": {
+        "name": "Avitross",
+        "types": [
+            "Air"
+        ],
+        "speed": 113,
+        "finalEvo": true
+    },
+    "pyder": {
+        "name": "Pyder",
+        "types": [
+            "Bug",
+            "Toxic"
+        ],
+        "speed": 45,
+        "finalEvo": false
+    },
+    "swolder": {
+        "name": "Swolder",
+        "types": [
+            "Bug",
+            "Toxic"
+        ],
+        "speed": 65,
+        "finalEvo": true
+    },
+    "antsee": {
+        "name": "Antsee",
+        "types": [
+            "Bug",
+            "Plant"
+        ],
+        "speed": 20,
+        "finalEvo": false
+    },
+    "florant": {
+        "name": "Florant",
+        "types": [
+            "Bug",
+            "Plant"
+        ],
+        "speed": 35,
+        "finalEvo": true
+    },
+    "florant-flychomp": {
+        "name": "Florant-Flychomp",
+        "types": [
+            "Bug",
+            "Plant"
+        ],
+        "speed": 50,
+        "finalEvo": true
+    },
+    "grubby": {
+        "name": "Grubby",
+        "types": [
+            "Bug"
+        ],
+        "speed": 42,
+        "finalEvo": false
+    },
+    "coonucopia": {
+        "name": "Coonucopia",
+        "types": [
+            "Bug"
+        ],
+        "speed": 37,
+        "finalEvo": false
+    },
+    "terrafly": {
+        "name": "Terrafly",
+        "types": [
+            "Bug",
+            "Toxic"
+        ],
+        "speed": 95,
+        "finalEvo": true
+    },
+    "terraclaw": {
+        "name": "Terraclaw",
+        "types": [
+            "Bug"
+        ],
+        "speed": 43,
+        "finalEvo": true
+    },
+    "kleptyke": {
+        "name": "Kleptyke",
+        "types": [
+            "Dark"
+        ],
+        "speed": 95,
+        "finalEvo": false
+    },
+    "ragoon": {
+        "name": "Ragoon",
+        "types": [
+            "Dark"
+        ],
+        "speed": 90,
+        "finalEvo": true
+    },
+    "babore": {
+        "name": "Babore",
+        "types": [
+            "Earth"
+        ],
+        "speed": 38,
+        "finalEvo": false
+    },
+    "boarrok": {
+        "name": "Boarrok",
+        "types": [
+            "Earth"
+        ],
+        "speed": 68,
+        "finalEvo": true
+    },
+    "geklow": {
+        "name": "Geklow",
+        "types": [
+            "Electric",
+            "Light"
+        ],
+        "speed": 67,
+        "finalEvo": false
+    },
+    "eleguana": {
+        "name": "Eleguana",
+        "types": [
+            "Electric",
+            "Light"
+        ],
+        "speed": 80,
+        "finalEvo": true
+    },
+    "slugling": {
+        "name": "Slugling",
+        "types": [
+            "Plant"
+        ],
+        "speed": 45,
+        "finalEvo": false
+    },
+    "escargrow": {
+        "name": "Escargrow",
+        "types": [
+            "Plant"
+        ],
+        "speed": 50,
+        "finalEvo": false
+    },
+    "gastroak": {
+        "name": "Gastroak",
+        "types": [
+            "Plant"
+        ],
+        "speed": 55,
+        "finalEvo": true
+    },
+    "gastroak-terraform": {
+        "name": "Gastroak-Terraform",
+        "types": [
+            "Plant",
+            "Earth"
+        ],
+        "speed": 65,
+        "finalEvo": true
+    },
+    "kabunga": {
+        "name": "Kabunga",
+        "types": [
+            "Plant"
+        ],
+        "speed": 86,
+        "finalEvo": false
+    },
+    "kabunga-halloween": {
+        "name": "Kabunga-Halloween",
+        "types": [
+            "Plant",
+            "Mind"
+        ],
+        "speed": 5,
+        "finalEvo": false
+    },
+    "wiki-wiki": {
+        "name": "Wiki-Wiki",
+        "types": [
+            "Plant"
+        ],
+        "speed": 47,
+        "finalEvo": true
+    },
+    "chartiki": {
+        "name": "Chartiki",
+        "types": [
+            "Plant",
+            "Fire"
+        ],
+        "speed": 62,
+        "finalEvo": true
+    },
+    "waka-laka": {
+        "name": "Waka-Laka",
+        "types": [
+            "Plant",
+            "Mind"
+        ],
+        "speed": 41,
+        "finalEvo": true
+    },
+    "shawchi": {
+        "name": "Shawchi",
+        "types": [
+            "Mind"
+        ],
+        "speed": 89,
+        "finalEvo": true
+    },
+    "rakrawla": {
+        "name": "Rakrawla",
+        "types": [
+            "Earth"
+        ],
+        "speed": 43,
+        "finalEvo": false
+    },
+    "sedimars": {
+        "name": "Sedimars",
+        "types": [
+            "Earth"
+        ],
+        "speed": 54,
+        "finalEvo": true
+    },
+    "gumpod": {
+        "name": "Gumpod",
+        "types": [
+            "Water"
+        ],
+        "speed": 33,
+        "finalEvo": false
+    },
+    "ventacean": {
+        "name": "Ventacean",
+        "types": [
+            "Water"
+        ],
+        "speed": 48,
+        "finalEvo": true
+    },
+    "phancub": {
+        "name": "Phancub",
+        "types": [
+            "Spirit",
+            "Brawler"
+        ],
+        "speed": 60,
+        "finalEvo": false
+    },
+    "phancub-valentine": {
+        "name": "Phancub-Valentine",
+        "types": [
+            "Spirit",
+            "Brawler"
+        ],
+        "speed": 46,
+        "finalEvo": false
+    },
+    "ursoul": {
+        "name": "Ursoul",
+        "types": [
+            "Spirit",
+            "Brawler"
+        ],
+        "speed": 75,
+        "finalEvo": true
+    },
+    "ursnac": {
+        "name": "Ursnac",
+        "types": [
+            "Spirit",
+            "Brawler"
+        ],
+        "speed": 55,
+        "finalEvo": true
+    },
+    "whispup": {
+        "name": "Whispup",
+        "types": [
+            "Spirit",
+            "Fire"
+        ],
+        "speed": 72,
+        "finalEvo": false
+    },
+    "revenine": {
+        "name": "Revenine",
+        "types": [
+            "Spirit",
+            "Fire"
+        ],
+        "speed": 97,
+        "finalEvo": true
+    },
+    "skilava": {
+        "name": "Skilava",
+        "types": [
+            "Fire"
+        ],
+        "speed": 55,
+        "finalEvo": false
+    },
+    "geksplode": {
+        "name": "Geksplode",
+        "types": [
+            "Fire"
+        ],
+        "speed": 60,
+        "finalEvo": false
+    },
+    "eruptidon": {
+        "name": "Eruptidon",
+        "types": [
+            "Fire"
+        ],
+        "speed": 77,
+        "finalEvo": true
+    },
+    "eruptidon-magmadire": {
+        "name": "Eruptidon-Magmadire",
+        "types": [
+            "Fire",
+            "Earth"
+        ],
+        "speed": 80,
+        "finalEvo": true
+    },
+    "craytal": {
+        "name": "Craytal",
+        "types": [
+            "Fire"
+        ],
+        "speed": 62,
+        "finalEvo": false
+    },
+    "craytal-winter": {
+        "name": "Craytal-Winter",
+        "types": [
+            "Ice",
+            "Plant"
+        ],
+        "speed": 62,
+        "finalEvo": false
+    },
+    "krakaloa": {
+        "name": "Krakaloa",
+        "types": [
+            "Fire"
+        ],
+        "speed": 22,
+        "finalEvo": true
+    },
+    "krakaloa-lavafiend": {
+        "name": "Krakaloa-Lavafiend",
+        "types": [
+            "Fire",
+            "Spirit"
+        ],
+        "speed": 12,
+        "finalEvo": true
+    },
+    "volkaloa": {
+        "name": "Volkaloa",
+        "types": [
+            "Fire",
+            "Ancient"
+        ],
+        "speed": 102,
+        "finalEvo": true
+    },
+    "festifir": {
+        "name": "Festifir",
+        "types": [
+            "Ice",
+            "Plant"
+        ],
+        "speed": 22,
+        "finalEvo": true
+    },
+    "igneol": {
+        "name": "Igneol",
+        "types": [
+            "Ancient"
+        ],
+        "speed": 42,
+        "finalEvo": false
+    },
+    "chrysite": {
+        "name": "Chrysite",
+        "types": [
+            "Ancient"
+        ],
+        "speed": 42,
+        "finalEvo": false
+    },
+    "obsidrugon": {
+        "name": "Obsidrugon",
+        "types": [
+            "Ancient"
+        ],
+        "speed": 65,
+        "finalEvo": true
+    },
+    "cafnote-female": {
+        "name": "Cafnote-Female",
+        "types": [
+            "Simple"
+        ],
+        "speed": 53,
+        "finalEvo": false
+    },
+    "cafnote-male": {
+        "name": "Cafnote-Male",
+        "types": [
+            "Simple"
+        ],
+        "speed": 53,
+        "finalEvo": false
+    },
+    "trumbull": {
+        "name": "Trumbull",
+        "types": [
+            "Simple"
+        ],
+        "speed": 73,
+        "finalEvo": true
+    },
+    "mootune": {
+        "name": "Mootune",
+        "types": [
+            "Simple"
+        ],
+        "speed": 62,
+        "finalEvo": true
+    },
+    "gobbidemic": {
+        "name": "Gobbidemic",
+        "types": [
+            "Toxic"
+        ],
+        "speed": 123,
+        "finalEvo": true
+    },
+    "icigool": {
+        "name": "Icigool",
+        "types": [
+            "Spirit",
+            "Ice"
+        ],
+        "speed": 39,
+        "finalEvo": true
+    },
+    "icigool-incarnate": {
+        "name": "Icigool-Incarnate",
+        "types": [
+            "Spirit",
+            "Ice"
+        ],
+        "speed": 50,
+        "finalEvo": true
+    },
+    "pyramind": {
+        "name": "Pyramind",
+        "types": [
+            "Mind"
+        ],
+        "speed": 35,
+        "finalEvo": false
+    },
+    "pharoglyph": {
+        "name": "Pharoglyph",
+        "types": [
+            "Mind"
+        ],
+        "speed": 106,
+        "finalEvo": true
+    },
+    "burroach": {
+        "name": "Burroach",
+        "types": [
+            "Bug",
+            "Earth"
+        ],
+        "speed": 77,
+        "finalEvo": false
+    },
+    "garbantis": {
+        "name": "Garbantis",
+        "types": [
+            "Bug",
+            "Earth"
+        ],
+        "speed": 104,
+        "finalEvo": true
+    },
+    "whimpor": {
+        "name": "Whimpor",
+        "types": [
+            "Metal",
+            "Air"
+        ],
+        "speed": 53,
+        "finalEvo": false
+    },
+    "stratusoar": {
+        "name": "Stratusoar",
+        "types": [
+            "Metal",
+            "Air"
+        ],
+        "speed": 81,
+        "finalEvo": true
+    },
+    "stratusoar-jetwing": {
+        "name": "Stratusoar-Jetwing",
+        "types": [
+            "Metal",
+            "Air"
+        ],
+        "speed": 119,
+        "finalEvo": true
+    },
+    "territi": {
+        "name": "Territi",
+        "types": [
+            "Toxic",
+            "Metal"
+        ],
+        "speed": 52,
+        "finalEvo": false
+    },
+    "dyeborg": {
+        "name": "Dyeborg",
+        "types": [
+            "Toxic",
+            "Metal"
+        ],
+        "speed": 68,
+        "finalEvo": true
+    },
+    "operaptor": {
+        "name": "Operaptor",
+        "types": [
+            "Metal",
+            "Earth"
+        ],
+        "speed": 49,
+        "finalEvo": false
+    },
+    "concredon": {
+        "name": "Concredon",
+        "types": [
+            "Metal",
+            "Earth"
+        ],
+        "speed": 66,
+        "finalEvo": false
+    },
+    "tyrecks": {
+        "name": "Tyrecks",
+        "types": [
+            "Metal",
+            "Earth"
+        ],
+        "speed": 74,
+        "finalEvo": true
+    },
+    "chompactor": {
+        "name": "Chompactor",
+        "types": [
+            "Metal"
+        ],
+        "speed": 45,
+        "finalEvo": false
+    },
+    "munchweel": {
+        "name": "Munchweel",
+        "types": [
+            "Metal"
+        ],
+        "speed": 66,
+        "finalEvo": true
+    },
+    "scorb": {
+        "name": "Scorb",
+        "types": [
+            "Metal"
+        ],
+        "speed": 77,
+        "finalEvo": false
+    },
+    "veylens": {
+        "name": "Veylens",
+        "types": [
+            "Metal"
+        ],
+        "speed": 55,
+        "finalEvo": false
+    },
+    "gardrone": {
+        "name": "Gardrone",
+        "types": [
+            "Metal"
+        ],
+        "speed": 61,
+        "finalEvo": true
+    },
+    "poochrol": {
+        "name": "Poochrol",
+        "types": [
+            "Metal",
+            "Electric"
+        ],
+        "speed": 69,
+        "finalEvo": false
+    },
+    "hunder": {
+        "name": "Hunder",
+        "types": [
+            "Metal",
+            "Electric"
+        ],
+        "speed": 116,
+        "finalEvo": true
+    },
+    "goppie": {
+        "name": "Goppie",
+        "types": [
+            "Water"
+        ],
+        "speed": 64,
+        "finalEvo": false
+    },
+    "arapaigo": {
+        "name": "Arapaigo",
+        "types": [
+            "Water"
+        ],
+        "speed": 105,
+        "finalEvo": true
+    },
+    "pyke": {
+        "name": "Pyke",
+        "types": [
+            "Ancient",
+            "Water"
+        ],
+        "speed": 68,
+        "finalEvo": false
+    },
+    "skelic": {
+        "name": "Skelic",
+        "types": [
+            "Ancient",
+            "Water"
+        ],
+        "speed": 87,
+        "finalEvo": true
+    },
+    "skelic-seascourge": {
+        "name": "Skelic-Seascourge",
+        "types": [
+            "Ancient",
+            "Water"
+        ],
+        "speed": 77,
+        "finalEvo": true
+    },
+    "zaleo": {
+        "name": "Zaleo",
+        "types": [
+            "Ancient",
+            "Electric"
+        ],
+        "speed": 52,
+        "finalEvo": false
+    },
+    "joltooth": {
+        "name": "Joltooth",
+        "types": [
+            "Ancient",
+            "Electric"
+        ],
+        "speed": 69,
+        "finalEvo": true
+    },
+    "joltooth-thunderking": {
+        "name": "Joltooth-Thunderking",
+        "types": [
+            "Ancient",
+            "Electric"
+        ],
+        "speed": 109,
+        "finalEvo": true
+    },
+    "dobo": {
+        "name": "Dobo",
+        "types": [
+            "Ancient",
+            "Fire"
+        ],
+        "speed": 58,
+        "finalEvo": false
+    },
+    "infernix": {
+        "name": "Infernix",
+        "types": [
+            "Ancient",
+            "Fire"
+        ],
+        "speed": 89,
+        "finalEvo": true
+    },
+    "kyogo": {
+        "name": "Kyogo",
+        "types": [
+            "Ancient",
+            "Dark"
+        ],
+        "speed": 74,
+        "finalEvo": false
+    },
+    "dorogo": {
+        "name": "Dorogo",
+        "types": [
+            "Ancient",
+            "Dark"
+        ],
+        "speed": 116,
+        "finalEvo": true
+    },
+    "wiledile": {
+        "name": "Wiledile",
+        "types": [
+            "Water",
+            "Plant"
+        ],
+        "speed": 79,
+        "finalEvo": false
+    },
+    "mawamurk": {
+        "name": "Mawamurk",
+        "types": [
+            "Water",
+            "Plant"
+        ],
+        "speed": 41,
+        "finalEvo": true
+    },
+    "ampole": {
+        "name": "Ampole",
+        "types": [
+            "Electric"
+        ],
+        "speed": 69,
+        "finalEvo": false
+    },
+    "amphiton": {
+        "name": "Amphiton",
+        "types": [
+            "Electric",
+            "Mind"
+        ],
+        "speed": 81,
+        "finalEvo": false
+    },
+    "meditoad": {
+        "name": "Meditoad",
+        "types": [
+            "Electric",
+            "Mind"
+        ],
+        "speed": 43,
+        "finalEvo": true
+    },
+    "pwuff": {
+        "name": "Pwuff",
+        "types": [
+            "Water",
+            "Toxic"
+        ],
+        "speed": 49,
+        "finalEvo": false
+    },
+    "bloatox": {
+        "name": "Bloatox",
+        "types": [
+            "Water",
+            "Toxic"
+        ],
+        "speed": 82,
+        "finalEvo": true
+    },
+    "barblast": {
+        "name": "Barblast",
+        "types": [
+            "Water",
+            "Toxic"
+        ],
+        "speed": 37,
+        "finalEvo": true
+    },
+    "swimp": {
+        "name": "Swimp",
+        "types": [
+            "Water"
+        ],
+        "speed": 64,
+        "finalEvo": false
+    },
+    "snapr": {
+        "name": "Snapr",
+        "types": [
+            "Water"
+        ],
+        "speed": 72,
+        "finalEvo": false
+    },
+    "garlash": {
+        "name": "Garlash",
+        "types": [
+            "Water"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "hydrini": {
+        "name": "Hydrini",
+        "types": [
+            "Bug",
+            "Water"
+        ],
+        "speed": 45,
+        "finalEvo": false
+    },
+    "bezeldew": {
+        "name": "Bezeldew",
+        "types": [
+            "Bug",
+            "Water"
+        ],
+        "speed": 52,
+        "finalEvo": false
+    },
+    "deludrix": {
+        "name": "Deludrix",
+        "types": [
+            "Bug",
+            "Water"
+        ],
+        "speed": 94,
+        "finalEvo": true
+    },
+    "ceratot": {
+        "name": "Ceratot",
+        "types": [
+            "Ancient",
+            "Plant"
+        ],
+        "speed": 44,
+        "finalEvo": false
+    },
+    "trepodon": {
+        "name": "Trepodon",
+        "types": [
+            "Ancient",
+            "Plant"
+        ],
+        "speed": 48,
+        "finalEvo": false
+    },
+    "colossotrops": {
+        "name": "Colossotrops",
+        "types": [
+            "Ancient",
+            "Plant"
+        ],
+        "speed": 54,
+        "finalEvo": true
+    },
+    "cupoink": {
+        "name": "Cupoink",
+        "types": [
+            "Fire"
+        ],
+        "speed": 55,
+        "finalEvo": false
+    },
+    "hoganosh": {
+        "name": "Hoganosh",
+        "types": [
+            "Fire"
+        ],
+        "speed": 41,
+        "finalEvo": true
+    },
+    "hoganosh-atomic": {
+        "name": "Hoganosh-Atomic",
+        "types": [
+            "Fire"
+        ],
+        "speed": 61,
+        "finalEvo": true
+    },
+    "mochibi": {
+        "name": "Mochibi",
+        "types": [
+            "Ice"
+        ],
+        "speed": 79,
+        "finalEvo": false
+    },
+    "totemochi": {
+        "name": "Totemochi",
+        "types": [
+            "Ice"
+        ],
+        "speed": 88,
+        "finalEvo": false
+    },
+    "mocho": {
+        "name": "Mocho",
+        "types": [
+            "Ice"
+        ],
+        "speed": 67,
+        "finalEvo": true
+    },
+    "gwurm": {
+        "name": "Gwurm",
+        "types": [
+            "Bug"
+        ],
+        "speed": 30,
+        "finalEvo": false
+    },
+    "odasho": {
+        "name": "Odasho",
+        "types": [
+            "Bug"
+        ],
+        "speed": 42,
+        "finalEvo": false
+    },
+    "spreezy": {
+        "name": "Spreezy",
+        "types": [
+            "Bug"
+        ],
+        "speed": 93,
+        "finalEvo": true
+    },
+    "pipsee": {
+        "name": "Pipsee",
+        "types": [
+            "Plant",
+            "Air"
+        ],
+        "speed": 55,
+        "finalEvo": false
+    },
+    "dandylil": {
+        "name": "Dandylil",
+        "types": [
+            "Plant",
+            "Air"
+        ],
+        "speed": 75,
+        "finalEvo": false
+    },
+    "whippledriff": {
+        "name": "Whippledriff",
+        "types": [
+            "Plant",
+            "Air"
+        ],
+        "speed": 89,
+        "finalEvo": true
+    },
+    "vari": {
+        "name": "Vari",
+        "types": [
+            "Simple"
+        ],
+        "speed": 57,
+        "finalEvo": false
+    },
+    "cervolen": {
+        "name": "Cervolen",
+        "types": [
+            "Simple"
+        ],
+        "speed": 89,
+        "finalEvo": true
+    },
+    "wendolen": {
+        "name": "Wendolen",
+        "types": [
+            "Spirit"
+        ],
+        "speed": 103,
+        "finalEvo": true
+    },
+    "kirolen": {
+        "name": "Kirolen",
+        "types": [
+            "Ancient"
+        ],
+        "speed": 82,
+        "finalEvo": true
+    },
+    "zepholen": {
+        "name": "Zepholen",
+        "types": [
+            "Air"
+        ],
+        "speed": 87,
+        "finalEvo": true
+    },
+    "venolen": {
+        "name": "Venolen",
+        "types": [
+            "Toxic"
+        ],
+        "speed": 61,
+        "finalEvo": true
+    },
+    "wresolen": {
+        "name": "Wresolen",
+        "types": [
+            "Brawler"
+        ],
+        "speed": 78,
+        "finalEvo": true
+    },
+    "buzzolen": {
+        "name": "Buzzolen",
+        "types": [
+            "Bug"
+        ],
+        "speed": 101,
+        "finalEvo": true
+    },
+    "tundrolen": {
+        "name": "Tundrolen",
+        "types": [
+            "Ice"
+        ],
+        "speed": 50,
+        "finalEvo": true
+    },
+    "pyrolen": {
+        "name": "Pyrolen",
+        "types": [
+            "Fire"
+        ],
+        "speed": 66,
+        "finalEvo": true
+    },
+    "hydrolen": {
+        "name": "Hydrolen",
+        "types": [
+            "Water"
+        ],
+        "speed": 107,
+        "finalEvo": true
+    },
+    "copling": {
+        "name": "Copling",
+        "types": [
+            "Ancient",
+            "Metal"
+        ],
+        "speed": 99,
+        "finalEvo": false
+    },
+    "copperage": {
+        "name": "Copperage",
+        "types": [
+            "Ancient",
+            "Metal"
+        ],
+        "speed": 74,
+        "finalEvo": false
+    },
+    "oxidrake": {
+        "name": "Oxidrake",
+        "types": [
+            "Ancient",
+            "Metal"
+        ],
+        "speed": 63,
+        "finalEvo": true
+    },
+    "spirivii": {
+        "name": "Spirivii",
+        "types": [
+            "Bug",
+            "Spirit"
+        ],
+        "speed": 45,
+        "finalEvo": false
+    },
+    "eidohusk": {
+        "name": "Eidohusk",
+        "types": [
+            "Bug",
+            "Spirit"
+        ],
+        "speed": 20,
+        "finalEvo": false
+    },
+    "harvesect": {
+        "name": "Harvesect",
+        "types": [
+            "Bug",
+            "Spirit"
+        ],
+        "speed": 56,
+        "finalEvo": true
+    },
+    "snowl": {
+        "name": "Snowl",
+        "types": [
+            "Ice"
+        ],
+        "speed": 59,
+        "finalEvo": false
+    },
+    "stricicle": {
+        "name": "Stricicle",
+        "types": [
+            "Ice",
+            "Air"
+        ],
+        "speed": 70,
+        "finalEvo": false
+    },
+    "wintrix": {
+        "name": "Wintrix",
+        "types": [
+            "Ice",
+            "Air"
+        ],
+        "speed": 94,
+        "finalEvo": true
+    },
+    "snagull": {
+        "name": "Snagull",
+        "types": [
+            "Air"
+        ],
+        "speed": 78,
+        "finalEvo": false
+    },
+    "snagulp": {
+        "name": "Snagulp",
+        "types": [
+            "Air",
+            "Toxic"
+        ],
+        "speed": 98,
+        "finalEvo": false
+    },
+    "snagoop": {
+        "name": "Snagoop",
+        "types": [
+            "Air",
+            "Toxic"
+        ],
+        "speed": 108,
+        "finalEvo": true
+    },
+    "makame": {
+        "name": "Makame",
+        "types": [
+            "Water"
+        ],
+        "speed": 30,
+        "finalEvo": false
+    },
+    "makoro": {
+        "name": "Makoro",
+        "types": [
+            "Water"
+        ],
+        "speed": 32,
+        "finalEvo": false
+    },
+    "tsukame": {
+        "name": "Tsukame",
+        "types": [
+            "Water"
+        ],
+        "speed": 34,
+        "finalEvo": true
+    },
+    "cavenish": {
+        "name": "Cavenish",
+        "types": [
+            "Water",
+            "Plant"
+        ],
+        "speed": 86,
+        "finalEvo": false
+    },
+    "banfino": {
+        "name": "Banfino",
+        "types": [
+            "Water",
+            "Plant"
+        ],
+        "speed": 109,
+        "finalEvo": false
+    },
+    "kanki": {
+        "name": "Kanki",
+        "types": [
+            "Water",
+            "Brawler"
+        ],
+        "speed": 63,
+        "finalEvo": false
+    },
+    "kanibo": {
+        "name": "Kanibo",
+        "types": [
+            "Water",
+            "Brawler"
+        ],
+        "speed": 80,
+        "finalEvo": true
+    },
+    "sharpod": {
+        "name": "Sharpod",
+        "types": [
+            "Water",
+            "Metal"
+        ],
+        "speed": 75,
+        "finalEvo": false
+    },
+    "samarine": {
+        "name": "Samarine",
+        "types": [
+            "Water",
+            "Metal"
+        ],
+        "speed": 80,
+        "finalEvo": true
+    },
+    "lumica": {
+        "name": "Lumica",
+        "types": [
+            "Water"
+        ],
+        "speed": 15,
+        "finalEvo": false
+    },
+    "lumello": {
+        "name": "Lumello",
+        "types": [
+            "Water"
+        ],
+        "speed": 15,
+        "finalEvo": true
+    },
+    "polypi": {
+        "name": "Polypi",
+        "types": [
+            "Water",
+            "Light"
+        ],
+        "speed": 39,
+        "finalEvo": false
+    },
+    "laphyra": {
+        "name": "Laphyra",
+        "types": [
+            "Water",
+            "Light"
+        ],
+        "speed": 71,
+        "finalEvo": false
+    },
+    "jellusa": {
+        "name": "Jellusa",
+        "types": [
+            "Water",
+            "Light"
+        ],
+        "speed": 92,
+        "finalEvo": true
+    },
+    "taoshi": {
+        "name": "Taoshi",
+        "types": [
+            "Simple"
+        ],
+        "speed": 50,
+        "finalEvo": false
+    },
+    "taoshinu": {
+        "name": "Taoshinu",
+        "types": [
+            "Simple"
+        ],
+        "speed": 62,
+        "finalEvo": true
+    },
+    "kittone": {
+        "name": "Kittone",
+        "types": [
+            "Simple"
+        ],
+        "speed": 85,
+        "finalEvo": false
+    },
+    "lyricat": {
+        "name": "Lyricat",
+        "types": [
+            "Simple"
+        ],
+        "speed": 101,
+        "finalEvo": true
+    },
+    "boonary": {
+        "name": "Boonary",
+        "types": [
+            "Spirit"
+        ],
+        "speed": 64,
+        "finalEvo": true
+    },
+    "somata": {
+        "name": "Somata",
+        "types": [
+            "Water",
+            "Mind"
+        ],
+        "speed": 22,
+        "finalEvo": false
+    },
+    "clionae": {
+        "name": "Clionae",
+        "types": [
+            "Water",
+            "Mind"
+        ],
+        "speed": 70,
+        "finalEvo": true
+    },
+    "cinnaboo": {
+        "name": "Cinnaboo",
+        "types": [
+            "Spirit"
+        ],
+        "speed": 70,
+        "finalEvo": false
+    },
+    "cinnogre": {
+        "name": "Cinnogre",
+        "types": [
+            "Spirit"
+        ],
+        "speed": 77,
+        "finalEvo": true
+    },
+    "swirelle": {
+        "name": "Swirelle",
+        "types": [
+            "Air"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "swishy": {
+        "name": "Swishy",
+        "types": [
+            "Water"
+        ],
+        "speed": 72,
+        "finalEvo": false
+    },
+    "fiscarna": {
+        "name": "Fiscarna",
+        "types": [
+            "Water"
+        ],
+        "speed": 79,
+        "finalEvo": true
+    },
+    "bunpuff": {
+        "name": "Bunpuff",
+        "types": [
+            "Plant",
+            "Earth"
+        ],
+        "speed": 71,
+        "finalEvo": false
+    },
+    "bunnecki": {
+        "name": "Bunnecki",
+        "types": [
+            "Plant",
+            "Earth"
+        ],
+        "speed": 102,
+        "finalEvo": true
+    },
+    "dractus": {
+        "name": "Dractus",
+        "types": [
+            "Plant"
+        ],
+        "speed": 63,
+        "finalEvo": false
+    },
+    "frutress": {
+        "name": "Frutress",
+        "types": [
+            "Plant"
+        ],
+        "speed": 36,
+        "finalEvo": false
+    },
+    "seedrake": {
+        "name": "Seedrake",
+        "types": [
+            "Plant"
+        ],
+        "speed": 83,
+        "finalEvo": false
+    },
+    "volpup": {
+        "name": "Volpup",
+        "types": [
+            "Electric",
+            "Toxic"
+        ],
+        "speed": 73,
+        "finalEvo": false
+    },
+    "halvantic": {
+        "name": "Halvantic",
+        "types": [
+            "Electric",
+            "Toxic"
+        ],
+        "speed": 85,
+        "finalEvo": true
+    },
+    "impkin": {
+        "name": "Impkin",
+        "types": [
+            "Dark"
+        ],
+        "speed": 72,
+        "finalEvo": false
+    },
+    "grimmick": {
+        "name": "Grimmick",
+        "types": [
+            "Dark"
+        ],
+        "speed": 92,
+        "finalEvo": false
+    },
+    "imperior": {
+        "name": "Imperior",
+        "types": [
+            "Dark"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "imperior-archfiend": {
+        "name": "Imperior-Archfiend",
+        "types": [
+            "Dark"
+        ],
+        "speed": 110,
+        "finalEvo": true
+    },
+    "mistlebud": {
+        "name": "Mistlebud",
+        "types": [
+            "Plant"
+        ],
+        "speed": 16,
+        "finalEvo": false
+    },
+    "hollibunch": {
+        "name": "Hollibunch",
+        "types": [
+            "Plant",
+            "Light"
+        ],
+        "speed": 39,
+        "finalEvo": true
+    },
+    "cryocub": {
+        "name": "Cryocub",
+        "types": [
+            "Ice"
+        ],
+        "speed": 51,
+        "finalEvo": false
+    },
+    "barbadger": {
+        "name": "Barbadger",
+        "types": [
+            "Ice",
+            "Brawler"
+        ],
+        "speed": 82,
+        "finalEvo": true
+    },
+    "kyeggo": {
+        "name": "Kyeggo",
+        "types": [
+            "Dark"
+        ],
+        "speed": 44,
+        "finalEvo": false
+    },
+    "doreggo": {
+        "name": "Doreggo",
+        "types": [
+            "Dark",
+            "Air"
+        ],
+        "speed": 56,
+        "finalEvo": false
+    },
+    "dreggodyne": {
+        "name": "Dreggodyne",
+        "types": [
+            "Dark",
+            "Air"
+        ],
+        "speed": 70,
+        "finalEvo": true
+    },
+    "dreggodyne-tempereign": {
+        "name": "Dreggodyne-Tempereign",
+        "types": [
+            "Dark",
+            "Air"
+        ],
+        "speed": 95,
+        "finalEvo": true
+    },
+    "wispur": {
+        "name": "Wispur",
+        "types": [
+            "Spirit",
+            "Light"
+        ],
+        "speed": 33,
+        "finalEvo": false
+    },
+    "lampurge": {
+        "name": "Lampurge",
+        "types": [
+            "Spirit",
+            "Light"
+        ],
+        "speed": 40,
+        "finalEvo": false
+    },
+    "charonyx": {
+        "name": "Charonyx",
+        "types": [
+            "Spirit",
+            "Light"
+        ],
+        "speed": 51,
+        "finalEvo": true
+    },
+    "smoal": {
+        "name": "Smoal",
+        "types": [
+            "Fire",
+            "Toxic"
+        ],
+        "speed": 54,
+        "finalEvo": false
+    },
+    "charkiln": {
+        "name": "Charkiln",
+        "types": [
+            "Fire",
+            "Toxic"
+        ],
+        "speed": 84,
+        "finalEvo": false
+    },
+    "billoforge": {
+        "name": "Billoforge",
+        "types": [
+            "Fire",
+            "Toxic"
+        ],
+        "speed": 24,
+        "finalEvo": true
+    },
+    "sherbot": {
+        "name": "Sherbot",
+        "types": [
+            "Ice",
+            "Metal"
+        ],
+        "speed": 76,
+        "finalEvo": true
+    },
+    "llamba": {
+        "name": "Llamba",
+        "types": [
+            "Simple"
+        ],
+        "speed": 70,
+        "finalEvo": false
+    },
+    "choochew": {
+        "name": "Choochew",
+        "types": [
+            "Simple"
+        ],
+        "speed": 86,
+        "finalEvo": false
+    },
+    "loomala": {
+        "name": "Loomala",
+        "types": [
+            "Simple"
+        ],
+        "speed": 111,
+        "finalEvo": true
+    },
+    "fentern": {
+        "name": "Fentern",
+        "types": [
+            "Simple"
+        ],
+        "speed": 70,
+        "finalEvo": false
+    },
+    "weaselin": {
+        "name": "Weaselin",
+        "types": [
+            "Simple"
+        ],
+        "speed": 90,
+        "finalEvo": true
+    },
+    "singeel": {
+        "name": "Singeel",
+        "types": [
+            "Electric"
+        ],
+        "speed": 5,
+        "finalEvo": false
+    },
+    "moreel": {
+        "name": "Moreel",
+        "types": [
+            "Electric",
+            "Dark"
+        ],
+        "speed": 35,
+        "finalEvo": true
+    },
+    "crabushi": {
+        "name": "Crabushi",
+        "types": [
+            "Metal",
+            "Brawler"
+        ],
+        "speed": 76,
+        "finalEvo": false
+    },
+    "crabtana": {
+        "name": "Crabtana",
+        "types": [
+            "Metal",
+            "Brawler"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "teripod": {
+        "name": "Teripod",
+        "types": [
+            "Ancient",
+            "Light"
+        ],
+        "speed": 61,
+        "finalEvo": false
+    },
+    "teridescent": {
+        "name": "Teridescent",
+        "types": [
+            "Ancient",
+            "Light"
+        ],
+        "speed": 70,
+        "finalEvo": true
+    },
+    "skampi": {
+        "name": "Skampi",
+        "types": [
+            "Water"
+        ],
+        "speed": 110,
+        "finalEvo": false
+    },
+    "prawnsu": {
+        "name": "Prawnsu",
+        "types": [
+            "Water"
+        ],
+        "speed": 92,
+        "finalEvo": true
+    },
+    "shrimposte": {
+        "name": "Shrimposte",
+        "types": [
+            "Water"
+        ],
+        "speed": 72,
+        "finalEvo": true
+    },
+    "dokan": {
+        "name": "Dokan",
+        "types": [
+            "Earth",
+            "Toxic"
+        ],
+        "speed": 49,
+        "finalEvo": false
+    },
+    "dokumori": {
+        "name": "Dokumori",
+        "types": [
+            "Earth",
+            "Toxic"
+        ],
+        "speed": 59,
+        "finalEvo": true
+    },
+    "mirrami": {
+        "name": "Mirrami",
+        "types": [
+            "Spirit",
+            "Metal"
+        ],
+        "speed": 24,
+        "finalEvo": false
+    },
+    "mirraith": {
+        "name": "Mirraith",
+        "types": [
+            "Spirit",
+            "Metal"
+        ],
+        "speed": 44,
+        "finalEvo": true
+    },
+    "thawmin": {
+        "name": "Thawmin",
+        "types": [
+            "Ice",
+            "Mind"
+        ],
+        "speed": 99,
+        "finalEvo": true
+    },
+    "leshent": {
+        "name": "Leshent",
+        "types": [
+            "Plant",
+            "Dark"
+        ],
+        "speed": 64,
+        "finalEvo": true
+    },
+    "kayute": {
+        "name": "Kayute",
+        "types": [
+            "Ice",
+            "Dark"
+        ],
+        "speed": 69,
+        "finalEvo": false
+    },
+    "kayappa": {
+        "name": "Kayappa",
+        "types": [
+            "Ice",
+            "Dark"
+        ],
+        "speed": 81,
+        "finalEvo": false
+    },
+    "kramboss": {
+        "name": "Kramboss",
+        "types": [
+            "Ice",
+            "Dark"
+        ],
+        "speed": 95,
+        "finalEvo": true
+    },
+    "kramboss-frostshackled": {
+        "name": "Kramboss-Frostshackled",
+        "types": [
+            "Ice",
+            "Dark"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "leopaw": {
+        "name": "Leopaw",
+        "types": [
+            "Light",
+            "Ice"
+        ],
+        "speed": 71,
+        "finalEvo": false
+    },
+    "chienta": {
+        "name": "Chienta",
+        "types": [
+            "Light",
+            "Ice"
+        ],
+        "speed": 115,
+        "finalEvo": true
+    },
+    "eyebrella": {
+        "name": "Eyebrella",
+        "types": [
+            "Water"
+        ],
+        "speed": 47,
+        "finalEvo": false
+    },
+    "parasoul": {
+        "name": "Parasoul",
+        "types": [
+            "Water",
+            "Dark"
+        ],
+        "speed": 74,
+        "finalEvo": true
+    },
+    "lissen": {
+        "name": "Lissen",
+        "types": [
+            "Mind"
+        ],
+        "speed": 38,
+        "finalEvo": false
+    },
+    "biwarned": {
+        "name": "Biwarned",
+        "types": [
+            "Mind",
+            "Simple"
+        ],
+        "speed": 56,
+        "finalEvo": true
+    },
+    "lantot": {
+        "name": "Lantot",
+        "types": [
+            "Fire"
+        ],
+        "speed": 63,
+        "finalEvo": false
+    },
+    "lantorch": {
+        "name": "Lantorch",
+        "types": [
+            "Fire",
+            "Light"
+        ],
+        "speed": 93,
+        "finalEvo": true
+    },
+    "milgoo": {
+        "name": "Milgoo",
+        "types": [
+            "Toxic"
+        ],
+        "speed": 69,
+        "finalEvo": false
+    },
+    "rancidor": {
+        "name": "Rancidor",
+        "types": [
+            "Toxic",
+            "Ancient"
+        ],
+        "speed": 113,
+        "finalEvo": true
+    },
+    "nautling": {
+        "name": "Nautling",
+        "types": [
+            "Ancient",
+            "Simple"
+        ],
+        "speed": 17,
+        "finalEvo": false
+    },
+    "nautillect": {
+        "name": "Nautillect",
+        "types": [
+            "Ancient",
+            "Mind"
+        ],
+        "speed": 34,
+        "finalEvo": true
+    },
+    "naukout": {
+        "name": "Naukout",
+        "types": [
+            "Ancient",
+            "Brawler"
+        ],
+        "speed": 34,
+        "finalEvo": true
+    },
+    "yutiny": {
+        "name": "Yutiny",
+        "types": [
+            "Ancient",
+            "Air"
+        ],
+        "speed": 59,
+        "finalEvo": false
+    },
+    "yuteen": {
+        "name": "Yuteen",
+        "types": [
+            "Ancient",
+            "Air"
+        ],
+        "speed": 73,
+        "finalEvo": false
+    },
+    "yutyphoon": {
+        "name": "Yutyphoon",
+        "types": [
+            "Ancient",
+            "Air"
+        ],
+        "speed": 104,
+        "finalEvo": true
+    },
+    "venile": {
+        "name": "Venile",
+        "types": [
+            "Ancient",
+            "Toxic"
+        ],
+        "speed": 59,
+        "finalEvo": false
+    },
+    "verinox": {
+        "name": "Verinox",
+        "types": [
+            "Ancient",
+            "Toxic"
+        ],
+        "speed": 73,
+        "finalEvo": false
+    },
+    "verinosaur": {
+        "name": "Verinosaur",
+        "types": [
+            "Ancient",
+            "Toxic"
+        ],
+        "speed": 104,
+        "finalEvo": true
+    },
+    "nymvolt": {
+        "name": "Nymvolt",
+        "types": [
+            "Electric",
+            "Bug"
+        ],
+        "speed": 70,
+        "finalEvo": false
+    },
+    "ohmbolt": {
+        "name": "Ohmbolt",
+        "types": [
+            "Electric",
+            "Bug"
+        ],
+        "speed": 70,
+        "finalEvo": false
+    },
+    "plasmoth": {
+        "name": "Plasmoth",
+        "types": [
+            "Electric",
+            "Bug"
+        ],
+        "speed": 112,
+        "finalEvo": true
+    },
+    "cicalute": {
+        "name": "Cicalute",
+        "types": [
+            "Bug",
+            "Mind"
+        ],
+        "speed": 40,
+        "finalEvo": false
+    },
+    "violana": {
+        "name": "Violana",
+        "types": [
+            "Bug",
+            "Mind"
+        ],
+        "speed": 61,
+        "finalEvo": true
+    },
+    "goswing": {
+        "name": "Goswing",
+        "types": [
+            "Air",
+            "Simple"
+        ],
+        "speed": 66,
+        "finalEvo": false
+    },
+    "ganderveil": {
+        "name": "Ganderveil",
+        "types": [
+            "Air",
+            "Simple"
+        ],
+        "speed": 93,
+        "finalEvo": true
+    },
+    "banooh": {
+        "name": "Banooh",
+        "types": [
+            "Simple"
+        ],
+        "speed": 66,
+        "finalEvo": false
+    },
+    "banokey": {
+        "name": "Banokey",
+        "types": [
+            "Simple",
+            "Brawler"
+        ],
+        "speed": 96,
+        "finalEvo": true
+    },
+    "spirwix": {
+        "name": "Spirwix",
+        "types": [
+            "Fire",
+            "Spirit"
+        ],
+        "speed": 45,
+        "finalEvo": false
+    },
+    "malevowax": {
+        "name": "Malevowax",
+        "types": [
+            "Fire",
+            "Spirit"
+        ],
+        "speed": 75,
+        "finalEvo": true
+    },
+    "grievestone": {
+        "name": "Grievestone",
+        "types": [
+            "Earth",
+            "Spirit"
+        ],
+        "speed": 30,
+        "finalEvo": false
+    },
+    "obelost": {
+        "name": "Obelost",
+        "types": [
+            "Earth",
+            "Spirit"
+        ],
+        "speed": 60,
+        "finalEvo": true
+    },
+    "jimby": {
+        "name": "Jimby",
+        "types": [
+            "Simple"
+        ],
+        "speed": 90,
+        "finalEvo": false
+    },
+    "piccolio": {
+        "name": "Piccolio",
+        "types": [
+            "Simple"
+        ],
+        "speed": 90,
+        "finalEvo": true
+    },
+    "wassel": {
+        "name": "Wassel",
+        "types": [
+            "Ice"
+        ],
+        "speed": 53,
+        "finalEvo": false
+    },
+    "borealisk": {
+        "name": "Borealisk",
+        "types": [
+            "Ice"
+        ],
+        "speed": 103,
+        "finalEvo": true
+    },
+    "snicle": {
+        "name": "Snicle",
+        "types": [
+            "Ice",
+            "Dark"
+        ],
+        "speed": 47,
+        "finalEvo": false
+    },
+    "slivyce": {
+        "name": "Slivyce",
+        "types": [
+            "Ice",
+            "Dark"
+        ],
+        "speed": 88,
+        "finalEvo": true
+    },
+    "nukichi": {
+        "name": "Nukichi",
+        "types": [
+            "Simple"
+        ],
+        "speed": 96,
+        "finalEvo": false
+    },
+    "dainuki": {
+        "name": "Dainuki",
+        "types": [
+            "Simple"
+        ],
+        "speed": 96,
+        "finalEvo": true
+    },
+    "terracolt": {
+        "name": "Terracolt",
+        "types": [
+            "Fire",
+            "Earth"
+        ],
+        "speed": 68,
+        "finalEvo": false
+    },
+    "broncotta": {
+        "name": "Broncotta",
+        "types": [
+            "Fire",
+            "Earth"
+        ],
+        "speed": 102,
+        "finalEvo": true
+    },
+    "duskit": {
+        "name": "Duskit",
+        "types": [
+            "Mind",
+            "Spirit"
+        ],
+        "speed": 109,
+        "finalEvo": true
+    },
+    "ikazune": {
+        "name": "Ikazune",
+        "types": [
+            "Fire",
+            "Electric"
+        ],
+        "speed": 94,
+        "finalEvo": true
+    },
+    "protogon": {
+        "name": "Protogon",
+        "types": [
+            "Metal"
+        ],
+        "speed": 121,
+        "finalEvo": true
+    },
+    "dakuda": {
+        "name": "Dakuda",
+        "types": [
+            "Water"
+        ],
+        "speed": 97,
+        "finalEvo": true
+    },
+    "dakuda-overcharged": {
+        "name": "Dakuda-Overcharged",
+        "types": [
+            "Water",
+            "Electric"
+        ],
+        "speed": 77,
+        "finalEvo": true
+    },
+    "cosmeleon": {
+        "name": "Cosmeleon",
+        "types": [
+            "Simple"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "mutagon": {
+        "name": "Mutagon",
+        "types": [
+            "Mind",
+            "Brawler"
+        ],
+        "speed": 71,
+        "finalEvo": true
+    },
+    "cephalops": {
+        "name": "Cephalops",
+        "types": [
+            "Water",
+            "Dark"
+        ],
+        "speed": 52,
+        "finalEvo": true
+    },
+    "elephage": {
+        "name": "Elephage",
+        "types": [
+            "Electric"
+        ],
+        "speed": 110,
+        "finalEvo": false
+    },
+    "phagenaut": {
+        "name": "Phagenaut",
+        "types": [
+            "Electric"
+        ],
+        "speed": 95,
+        "finalEvo": true
+    },
+    "arceros": {
+        "name": "Arceros",
+        "types": [
+            "Fire",
+            "Ancient"
+        ],
+        "speed": 91,
+        "finalEvo": true
+    },
+    "glacadia": {
+        "name": "Glacadia",
+        "types": [
+            "Ice",
+            "Ancient"
+        ],
+        "speed": 111,
+        "finalEvo": true
+    },
+    "novadeaus": {
+        "name": "Novadeaus",
+        "types": [
+            "Fire",
+            "Ice"
+        ],
+        "speed": 101,
+        "finalEvo": true
+    },
+    "morphezu": {
+        "name": "Morphezu",
+        "types": [
+            "Air"
+        ],
+        "speed": 85,
+        "finalEvo": true
+    },
+    "behemoroth": {
+        "name": "Behemoroth",
+        "types": [
+            "Earth"
+        ],
+        "speed": 85,
+        "finalEvo": true
+    },
+    "leviatross": {
+        "name": "Leviatross",
+        "types": [
+            "Water"
+        ],
+        "speed": 150,
+        "finalEvo": true
+    },
+    "cosmiore-encased": {
+        "name": "Cosmiore-Encased",
+        "types": [
+            "Ancient",
+            "Mind"
+        ],
+        "speed": 46,
+        "finalEvo": true
+    },
+    "cosmiore-cracked": {
+        "name": "Cosmiore-Cracked",
+        "types": [
+            "Ancient",
+            "Mind"
+        ],
+        "speed": 76,
+        "finalEvo": true
+    },
+    "cosmiore-unleashed": {
+        "name": "Cosmiore-Unleashed",
+        "types": [
+            "Ancient",
+            "Mind"
+        ],
+        "speed": 96,
+        "finalEvo": true
+    },
+    "solnecta": {
+        "name": "Solnecta",
+        "types": [
+            "Bug",
+            "Light"
+        ],
+        "speed": 86,
+        "finalEvo": true
+    },
+    "nymaurae": {
+        "name": "Nymaurae",
+        "types": [
+            "Light",
+            "Air"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "nymesis": {
+        "name": "Nymesis",
+        "types": [
+            "Dark",
+            "Air"
+        ],
+        "speed": 100,
+        "finalEvo": true
+    },
+    "metronette": {
+        "name": "Metronette",
+        "types": [
+            "Dark",
+            "Mind"
+        ],
+        "speed": 105,
+        "finalEvo": true
+    },
+    "metronette-willbound": {
+        "name": "Metronette-Willbound",
+        "types": [
+            "Dark",
+            "Mind"
+        ],
+        "speed": 115,
+        "finalEvo": true
+    },
+    "nevermare": {
+        "name": "Nevermare",
+        "types": [
+            "Plant",
+            "Spirit"
+        ],
+        "speed": 111,
+        "finalEvo": true
+    },
+    "gargolem": {
+        "name": "Gargolem",
+        "types": [
+            "Earth",
+            "Air"
+        ],
+        "speed": 105,
+        "finalEvo": true
+    },
+    "gargolem-attack": {
+        "name": "Gargolem-Attack",
+        "types": [
+            "Earth",
+            "Air"
+        ],
+        "speed": 105,
+        "finalEvo": true
+    },
+    "gargolem-defense": {
+        "name": "Gargolem-Defense",
+        "types": [
+            "Earth",
+            "Air"
+        ],
+        "speed": 65,
+        "finalEvo": true
+    },
+    "gargolem-speed": {
+        "name": "Gargolem-Speed",
+        "types": [
+            "Earth",
+            "Air"
+        ],
+        "speed": 165,
+        "finalEvo": true
+    },
+    "odoyaga": {
+        "name": "Odoyaga",
+        "types": [
+            "Mind",
+            "Air"
+        ],
+        "speed": 71,
+        "finalEvo": true
+    },
+    "wabalisc": {
+        "name": "Wabalisc",
+        "types": [
+            "Ice"
+        ],
+        "speed": 69,
+        "finalEvo": true
+    },
+    "akhalos": {
+        "name": "Akhalos",
+        "types": [
+            "Ice",
+            "Water"
+        ],
+        "speed": 84,
+        "finalEvo": true
+    },
+    "celesting": {
+        "name": "Celesting",
+        "types": [
+            "Metal",
+            "Light"
+        ],
+        "speed": 91,
+        "finalEvo": true
+    },
+    "celesting-stellarchime": {
+        "name": "Celesting-Stellarchime",
+        "types": [
+            "Metal",
+            "Light"
+        ],
+        "speed": 121,
+        "finalEvo": true
+    },
+    "mimask": {
+        "name": "Mimask",
+        "types": [
+            "Dark"
+        ],
+        "speed": 113,
+        "finalEvo": true
+    },
+    "grimyuline": {
+        "name": "Grimyuline",
+        "types": [
+            "Dark",
+            "Brawler"
+        ],
+        "speed": 98,
+        "finalEvo": true
+    },
+    "heavy-bag": {
+        "name": "Heavy Bag",
+        "types": [
+            "Heavybag"
+        ],
+        "speed": 1,
+        "finalEvo": true
+    }
+}
