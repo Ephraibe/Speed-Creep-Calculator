@@ -448,7 +448,7 @@ export default function SpeedCalculator() {
             }}>
 
               {/* Slider Configs */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", width: "24%", padding: 16, gap: 9}}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", width: "258px", padding: 16, gap: 9}}>
                 {/* Speed TPs */}
                   <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
                     Speed TPs: <span style={{ color: "#a5b4fc" }}>{speedTp}</span>
@@ -473,7 +473,7 @@ export default function SpeedCalculator() {
               </div>
               
               {/* Dropdown Configs */}
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", width: "24%", padding: 16}}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", width: "258px", padding: 16}}>
                 {/* Personality */}
                   <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>Personality</label>
                   <select
@@ -518,7 +518,7 @@ export default function SpeedCalculator() {
               </div>
               
               {/* Selected/Same Speed Loomians */}
-              <div style={{ display: "flex", flexDirection: "column", width: "24%" }}>
+              <div style={{ display: "flex", flexDirection: "column", width: "258px" }}>
                 <div style={{
                   //background: "rgba(3, 255, 74, 0.89)",
                   display: "flex",
@@ -625,7 +625,7 @@ export default function SpeedCalculator() {
               </div>
               
               {/* Hovered Loomian Data */}
-              <div style={{ width: "24%" }}>
+              <div style={{ width: "258px" }}>
                   {hoveredEntry && (
                     <div style={{ display: "flex", alignItems: "flex-start", flex: 1 }}>
                       <SetData
