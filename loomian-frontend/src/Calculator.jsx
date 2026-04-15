@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://speed-creep-calculator.onrender.com";
 
 const ABILITIES = [
   "None", "Hotfoot", "Prowler", "Rain Rush", "Overclock", "Sugar Rush",
