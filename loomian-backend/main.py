@@ -63,7 +63,8 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # your React dev server
+    allow_origins=["http://localhost:5173",
+                   "https://speed-creep-calculator-1.onrender.com"],  # your React dev server
     allow_methods=["*"],
     allow_headers=["*"],
 )
