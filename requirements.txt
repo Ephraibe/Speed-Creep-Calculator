@@ -1,1 +1,5 @@
 fastapi[standard]==0.128.0
+uvicorn
+pydantic
+passlib[bcrypt]
+python-jose
