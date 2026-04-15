@@ -182,7 +182,7 @@ export default function SpeedCalculator() {
           setAllSets(setsData.speeds ?? []);
           setAllLoomians(loomsData);
       } catch (e) {
-          setError("Could not reach the backend. Is it running?");
+          setError("Could not load default sets, try again later.");
       } finally {
           setLoading(false);
       }
