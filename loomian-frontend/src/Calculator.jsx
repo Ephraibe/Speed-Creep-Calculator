@@ -436,7 +436,7 @@ export default function SpeedCalculator() {
               //background: "rgba(255, 3, 3, 0.89)",
               display: "flex",
               gap: 8,
-              flexWrap: "nowrap",
+              flexWrap: "wrap",
               alignContent: "center",
               alignItems: "center",
               justifyContent: "space-evenly",
